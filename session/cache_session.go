@@ -38,7 +38,7 @@ func (t *CacheSession) GetSessionID() string {
 }
 
 func (t *CacheSession) makeKey() string {
-	return fmt.Sprintf("%s%s", t.keyPrefix, t.id)
+	return fmt.Sprintf("%s@%s", t.keyPrefix, t.id)
 }
 
 func (t *CacheSession) Load() {

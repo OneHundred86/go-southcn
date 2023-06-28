@@ -32,7 +32,7 @@ func NewRedisCache(client *redis.Client, encoder Encoder, keyPrefix string) Cach
 }
 
 func makeCacheKey(prefix, key string) string {
-	return fmt.Sprintf("%s%s", prefix, key)
+	return fmt.Sprintf("%s@%s", prefix, key)
 }
 
 func (cache *RedisCache) Get(key string, value interface{}) bool {
